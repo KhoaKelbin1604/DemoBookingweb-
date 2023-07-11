@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Record</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Service ID</th>
+                <th>Name of Service</th>
+            </tr>
+        </thead>
+        {% for service in services %}
+        <tr>
+            <td>{{service.serviceid}}</td>
+            <td>{{service.name_service}}</td>
+            <td>
+                <a href="edit/{{ service.serviceid }}">Edit</a>
+                <a href="delete/{{service.serviceid}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+<button><a style="color:red;" href="create">Create</a></button>
+</body>
+
+</html> 

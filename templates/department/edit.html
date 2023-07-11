@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Edit </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <form method="POST" action="./update/{{department.departmentid}}">
+        {% csrf_token %}
+        <div>
+            <br>
+            <p>
+                <h3>Update Details</h3>
+            </p>
+        </div>
+        <div>
+            <p>Department Id:</p>
+            <div>
+                <input type="text" name="departmentid" value="{{department.departmentid}}" />
+            </div>
+        </div>
+        <div>
+            <p>Service Name:</p>
+            <div>
+                <input type="text" name="name_department" value="{{department.named}}" />
+            </div>
+        </div>
+        <div>
+            <br>
+            <button><a style="color:red; href=">Update</a></button>
+        </div>
+    </form>
+</body>
+
+</html>
+
+
